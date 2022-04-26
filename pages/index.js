@@ -6,14 +6,11 @@ function HomePage(){
       <h1> Hello World </h1>
       <ul>
         <li>
-          <Link href="/portfolio"></Link>
+          <Link href="/portfolio">Portfolio</Link>
         </li>
         <li>
-          <Link>Clientes</Link>
+          <Link href="/clients">Clientes</Link>
         </li>
-      </ul>
-    </div>
-  )
-}
+      </ul> </div>) }
 
 export default HomePage;
