@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "checkJs": true,
+    "jsx": "react-jsx",
+    "lib": [ "dom", "es2017" ],
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/lib/*": ["lib/*"],
+      "@/styles/*": ["styles/*"]
+    }
+  }
+}
