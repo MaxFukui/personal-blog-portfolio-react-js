@@ -12,7 +12,7 @@ import {useRouter} from "next/router"
 // }
 
 const myLoader = ( { src }) =>{
-    return `http://192.168.100.183:1337${src}`
+    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${src}`
 }
 
 function Card(props){

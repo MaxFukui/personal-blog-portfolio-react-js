@@ -9,7 +9,7 @@ export async function markdownToHtml(markdown){
 
 function resolveImage(markdownPuro){
     let padrao = '<img src="'
-    const preString = padrao+"http://192.168.100.183:1337"
+    const preString = padrao+process.env.NEXT_PUBLIC_STRAPI_API_URL
     let fixedUrlString = markdownPuro.replace(padrao, preString)
     return fixedUrlString
 }
