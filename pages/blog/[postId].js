@@ -3,6 +3,8 @@ import Footer from "@/components/footer";
 import { useQuery, gql } from "@apollo/client";
 import { useState, useEffect, Fragment } from "react";
 import PostContent from "../../components/blog/content";
+import { useRouter } from "node_modules/next/router";
+
 const postQuery = gql`
   query post($id: ID!) {
     blog(id: $id) {
@@ -43,24 +45,18 @@ const postQuery = gql`
     }
   }
 `;
+
 function PostPage(props) {
+  const router = useRouter();
+  console.log("pathname: "+router.pathname)
+  console.log(router.query.postId)
   const [post, setPost] = useState([]);
   const [user, setUser] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
-  const id = "1";
+  const id = `${ router.query.postId }`;
   const { data, error, loading } = useQuery(postQuery, {
     variables: { id: id },
   });
-
-  //   if (!loading) {
-  //     useEffect(() => {
-  //       const id = setInterval(() => {
-  //         setPost(data.blog.data);
-  //         setUser(data.blog.data.attributes.users_permissions_users);
-  //       }, 2000);
-  //       return () => clearInterval(id)
-  //     });
-  //   }
 
   useEffect(() => {
     console.log(loading);

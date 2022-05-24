@@ -16,13 +16,13 @@ const myLoader = ( { src }) =>{
 }
 
 function Card(props){
+    const {title, headline, imageUrl, id} = props
     const router = useRouter()
     const handleClick = (e) => {
         e.preventDefault()
         const fullPath = `/blog/${props.id}`
         router.push(fullPath)
     }
-    const {title, headline, imageUrl, id} = props
 
     return(
         <div onClick={handleClick}>
@@ -32,4 +32,5 @@ function Card(props){
         </div>
      )
 }
+
 export default Card
