@@ -7,13 +7,18 @@ import { postList } from "@/lib/api";
  export default function BlogList() {
   const [isLoad, setIsLoad] = useState(false);
   const [posts, setPosts] = useState([]);
-  const {data} = useQuery(postList, {variables:{pageSize:3, page:1}})
+  const {data, loading, error} = useQuery(postList, {variables:{pageSize:3, page:1}})
   useEffect(()=>{
-    const id = setInterval(()=>{
-      setPosts(data.blogs.data)
-      setIsLoad(true)
-    },2000)
-    return () => clearInterval(id)
+    if(error){
+      console.log(error)
+    }
+    if(!loading){
+      const id = setInterval(()=>{
+        setPosts(data.blogs.data)
+        setIsLoad(true)
+      },2000)
+      return () => clearInterval(id)
+    }
   })
 
   return (

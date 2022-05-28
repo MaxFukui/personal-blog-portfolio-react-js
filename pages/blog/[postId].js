@@ -4,6 +4,8 @@ import { useQuery, gql } from "@apollo/client";
 import { useState, useEffect, Fragment } from "react";
 import PostContent from "../../components/blog/content";
 import { useRouter } from "node_modules/next/router";
+import PostCoverHeadline from "@/components/blog/blog-headline-cover";
+import AuthorPost from "@/components/blog/author-blog";
 
 const postQuery = gql`
   query post($id: ID!) {
@@ -58,6 +60,11 @@ function PostPage(props) {
     variables: { id: id },
   });
 
+  function handleImage (oldUrl){
+    const newImageUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL+oldUrl
+    return newImageUrl
+  }
+
   useEffect(() => {
     console.log(loading);
     if (!loading) {
@@ -66,8 +73,6 @@ function PostPage(props) {
       setIsLoad(true)
     }
   }, [loading]);
-  console.log(post);
-  console.log(user);
 
   if (!isLoad) {
     return (
@@ -80,13 +85,14 @@ function PostPage(props) {
       <div>
         <Menu />
         <div>
-          {
-            <PostContent
-              content={post.attributes.content}
-              title={post.attributes.title}
-              cover={post.attributes.cover.data}
-            />
-          }
+          <PostCoverHeadline cover={handleImage( post.attributes.cover.data[0].attributes.url )} headline={post.attributes.headline} 
+           title={post.attributes.title}/>
+          <PostContent
+            content={post.attributes.content} />
+          <AuthorPost src={user.data[0].attributes.portrait.data.attributes.url}
+            name={user.data[0].attributes.name} 
+            about={user.data[0].attributes.about} 
+          />
         </div>
         <Footer />
       </div>

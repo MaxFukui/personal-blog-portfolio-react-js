@@ -28,7 +28,8 @@ function Card(props){
         <div onClick={handleClick}>
             <h2>{ title }</h2>
             <p>{headline}</p>
-            <Image  loader={myLoader} src={imageUrl}  layout="fixed"  width={200} height={300}/>
+            <Image  loader={myLoader} src={imageUrl}  layout="fixed"  
+            width={200} height={300}/>
         </div>
      )
 }
