@@ -2,23 +2,29 @@ import AboutCard from "@/components/about/about-card";
 import Image from "node_modules/next/image";
 import { useState } from "react";
 import AcademicCard from "@/components/about/about-academic";
-import {FaUniversity} from "@react-icons/all-files/fa/FaUniversity"
-import {DiNodejsSmall} from  "@react-icons/all-files/di/DiNodejsSmall"
 import SkillAbout from "@/components/about/about-skills";
-import {GiAncientSword} from "@react-icons/all-files/gi/GiAncientSword"
-
+import { FaUniversity } from "react-icons/fa";
+import { GiAncientSword } from "react-icons/gi";
+import { GrMysql } from "react-icons/gr";
+import {
+  DiNodejsSmall,
+  DiRust,
+  DiJavascript,
+  DiReact,
+  DiPython,
+  DiMongodb,
+} from "react-icons/di";
+import {
+  SiTailwindcss,
+  SiDjango,
+  SiNextdotjs,
+  SiGatsby,
+  SiKeras,
+} from "react-icons/si";
 
 function AboutPage() {
-  const [mouseOver, setMouseOver] = useState(false);
   const [mouseOverGraduation, setMouseOverGraduation] = useState(false);
   const [mouseOverPostGraduation, setMouseOverPostGraduation] = useState(false);
-
-  let mouseVariable = <></>
-  if(mouseOver){
-    mouseVariable = <>teste</>
-  } else {
-    mouseVariable = <> </>
-  }
 
   return (
     <div
@@ -58,65 +64,147 @@ function AboutPage() {
 
       <AboutCard>
         <div className="flex flex-col px-2 items-stretch text-white w-full">
-         <span className="flex flex-row p-2 text-lg font-extrabold">
-            <FaUniversity className="mt-1"/>
+          <span className="flex flex-row p-2 text-lg font-extrabold">
+            <FaUniversity className="mt-1" />
             <h2 className="pl-2">Acadêmico</h2>
-          </span> 
+          </span>
           <h2 className="p-2 text-lg font-bold">Graduação</h2>
 
-          <ul className="Graduacao  w-full flex" 
-            onMouseOver={()=>setMouseOverGraduation(true)}
-            onMouseLeave={()=>{setMouseOverGraduation(false)}}
+          <ul
+            className="Graduacao  w-full flex"
+            onMouseOver={() => setMouseOverGraduation(true)}
+            onMouseLeave={() => {
+              setMouseOverGraduation(false);
+            }}
           >
-              <AcademicCard graduation={"Arquitetura e Urbanismo"} 
-                dataTermino="2021.2"
-                stateMouse={mouseOverGraduation} 
-                faculdade="UCDB Univerdade Católica Dom Bosco"/>
-              <AcademicCard graduation={"Análise e Desenvolvimento de Sistemas"}
-                faculdade="Universidade Claretiano"
-                dataTermino="2017.2"
-                stateMouse={mouseOverGraduation}/>
+            <AcademicCard
+              graduation={"Arquitetura e Urbanismo"}
+              dataTermino="2021.2"
+              stateMouse={mouseOverGraduation}
+              faculdade="UCDB Univerdade Católica Dom Bosco"
+            />
+            <AcademicCard
+              graduation={"Análise e Desenvolvimento de Sistemas"}
+              faculdade="Universidade Claretiano"
+              dataTermino="2017.2"
+              stateMouse={mouseOverGraduation}
+            />
           </ul>
           <h2 className="p-2 text-lg font-bold">Pós-Graduação</h2>
-          <ul className="PosGraduacao"
-            onMouseOver={()=>setMouseOverPostGraduation(true)}
-            onMouseLeave={()=>{setMouseOverPostGraduation(false)}}
+          <ul
+            className="PosGraduacao"
+            onMouseOver={() => setMouseOverPostGraduation(true)}
+            onMouseLeave={() => {
+              setMouseOverPostGraduation(false);
+            }}
           >
-              <AcademicCard graduation={"MBA em Matemática Aplicada"}
-                faculdade="Universidade Unyleya"
-                dataTermino="2020.2"
-                stateMouse={mouseOverPostGraduation}/>
-              <AcademicCard graduation={"MBA em Engenheiro Machine Learning"}
-                faculdade="Instituto de gestão e tecnologia da informação (IGTI)"
-                dataTermino="2020.2"
-                stateMouse={mouseOverPostGraduation}/>
-              <AcademicCard graduation={"MBA em Cientista de Dados"}
-                faculdade="Instituto de gestão e tecnologia da informação (IGTI)"
-                dataTermino="2022.1"
-                stateMouse={mouseOverPostGraduation}/>
-              <AcademicCard graduation={"MBA em Desenvolvedor FullStack"}
-                faculdade="Instituto de gestão e tecnologia da informação (IGTI)"
-                dataTermino="Em andamento..."
-                stateMouse={mouseOverPostGraduation}/>
+            <AcademicCard
+              graduation={"MBA em Matemática Aplicada"}
+              faculdade="Universidade Unyleya"
+              dataTermino="2020.2"
+              stateMouse={mouseOverPostGraduation}
+            />
+            <AcademicCard
+              graduation={"MBA em Engenheiro Machine Learning"}
+              faculdade="Instituto de gestão e tecnologia da informação (IGTI)"
+              dataTermino="2020.2"
+              stateMouse={mouseOverPostGraduation}
+            />
+            <AcademicCard
+              graduation={"MBA em Cientista de Dados"}
+              faculdade="Instituto de gestão e tecnologia da informação (IGTI)"
+              dataTermino="2022.1"
+              stateMouse={mouseOverPostGraduation}
+            />
+            <AcademicCard
+              graduation={"MBA em Desenvolvedor FullStack"}
+              faculdade="Instituto de gestão e tecnologia da informação (IGTI)"
+              dataTermino="Em andamento..."
+              stateMouse={mouseOverPostGraduation}
+            />
           </ul>
-
         </div>
       </AboutCard>
 
       <AboutCard>
-<div className="flex flex-col pl-2">
-        <div className="flex flex-row">
-              <GiAncientSword className="text-xl text-white"/>
-              <h2 className="font-bold text-left text-white pb-2">Habilidades e Domínio de Técnologias</h2>
-        </div>
-        <div className="Habilidades">
-          <div className="flex flex-wrap">
-            <SkillAbout porcentagem={60} skill="NodeJs">
-              <DiNodejsSmall className="text-9xl text-white drop-shadow-xl" />
-            </SkillAbout>
+
+      </AboutCard>
+
+      <AboutCard>
+        <div className="flex flex-col pl-2">
+          <div className="flex flex-row">
+            <GiAncientSword className="text-xl text-white" />
+            <h2 className="font-bold text-left text-white pb-2">
+              Tecnlogias que gosto de trabalhar
+            </h2>
+          </div>
+          <div className="Habilidades">
+            <div className="flex flex-wrap content-center justify-center">
+              <SkillAbout
+                porcentagem={80}
+                skill="NodeJs"
+                forWhat={"Desenvolvimento Web"}
+              >
+                <DiNodejsSmall className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="Rust"
+                forWhat={"Linaguagem de programação com alta otmização de recursos"}
+              >
+                <DiRust className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="JavaScript"
+                forWhat={"Desenvolvimento Web"}
+              >
+                <DiJavascript className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="React"
+                forWhat={"Ótimo para otimização e reutilização de componentes"}
+              >
+                <DiReact className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="Python"
+                forWhat={"Linguagem de Programação Geral"}
+              >
+                <DiPython className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="TailwindCss"
+                forWhat={"Uma nova forma de usar usar styles"}
+              >
+                <SiTailwindcss className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="Django"
+                forWhat={"Framework para desenvolimento de BackEnd"}
+              >
+                <SiDjango className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="MySql"
+                forWhat={"Banco de dados relacional"}
+              >
+                <GrMysql className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="MongoDB"
+                forWhat={"Banco de dados não relacional Web"}
+              >
+                <DiMongodb className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={80} skill="NextJs"
+                forWhat={"Desenvolvimento web com renderização server-side"}
+              >
+                <SiNextdotjs className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={70} skill="GatsbyJs"
+                forWhat={"Desenvolviemtno web com renderização estática client-side"}
+              >
+                <SiGatsby className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+              <SkillAbout porcentagem={70} skill="Keras"
+                forWhat={"Machine learning com alto poder de abstração"}
+              >
+                <SiKeras className="text-6xl text-white drop-shadow-xl" />
+              </SkillAbout>
+            </div>
           </div>
         </div>
-</div>
       </AboutCard>
 
       <AboutCard>
@@ -149,7 +237,6 @@ function AboutPage() {
           </div>
         </div>
       </AboutCard>
-
     </div>
   );
 }
