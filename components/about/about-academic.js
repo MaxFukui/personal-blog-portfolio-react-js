@@ -19,7 +19,9 @@ export default function AcademicCard(props) {
       <li
         className="grow  p-3 bg-zinc-900 m-2 rounded-xl text-center
         transition ease-in-out delay-150 drop-shadow-md hover:scale-105 
-        hover:drop-shadow-2xl border-2 border-zinc-900 hover:border-cyan-500" 
+        hover:drop-shadow-2xl border-2 border-zinc-900 hover:border-cyan-500 
+        basis-1/4
+        " 
         onMouseOver={() => {
           setMouseOver(true);
         }}

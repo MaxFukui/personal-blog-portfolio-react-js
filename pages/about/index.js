@@ -95,7 +95,7 @@ function AboutPage() {
           </ul>
           <h2 className="p-2 text-lg font-bold">Pós-Graduação</h2>
           <ul
-            className="PosGraduacao"
+            className="PosGraduacao w-full flex flex-wrap"
             onMouseOver={() => setMouseOverPostGraduation(true)}
             onMouseLeave={() => {
               setMouseOverPostGraduation(false);
@@ -134,7 +134,7 @@ function AboutPage() {
           <div className="grow pr-3">
             <div className="flex flex-row pl-2 text-white">
               <IoLanguageSharp className="text-2xl font-bold mt-1" />
-              <h2 className="ml-2 font-bold text-lg">Línguas que falo</h2>
+              <h2 className="ml-2 font-bold text-lg">Idiomas que falo</h2>
             </div>
             <div
               className="flex flex-col text-white m-2 rounded-lg 
@@ -144,7 +144,7 @@ function AboutPage() {
                 Português: <strong>Nativo</strong>
               </h2>
               <h2>
-                Inglês: <strong>Fluente</strong> (Conversação/Escrita/Fala)
+                Inglês: <strong>Fluente</strong> (Fala bem; Escreve bem; Lê bem)
               </h2>
               <h2>Alemão: Básico</h2>
             </div>
@@ -153,7 +153,7 @@ function AboutPage() {
             <div className="flex flex-row pl-2 text-white">
               <IoLanguageSharp className="text-2xl font-bold mt-1" />
               <h2 className="ml-2 font-bold text-lg">
-                Areas preferidas de atuação
+                Áreas preferidas de atuação
               </h2>
             </div>
             <div className="flex flex-col text-white m-2 rounded-lg bg-zinc-900 w-full p-3">
@@ -169,9 +169,7 @@ function AboutPage() {
         <div className="flex flex-col pl-2">
           <div className="flex flex-row">
             <GiAncientSword className="text-xl text-white" />
-            <h2 className="font-bold text-left text-white pb-2">
-              Tecnologias que gosto de trabalhar
-            </h2>
+            <h2 className="font-bold text-left text-white pb-2">Gosto de trabalhar com </h2>
           </div>
           <div className="Habilidades">
             <div className="flex flex-wrap content-center justify-center">
@@ -186,7 +184,7 @@ function AboutPage() {
                 porcentagem={80}
                 skill="Rust"
                 forWhat={
-                  "Linaguagem de programação com alta otmização de recursos"
+                  "Linguagem de programação com alta otimização de recursos"
                 }
               >
                 <DiRust className="text-6xl text-white drop-shadow-xl" />
@@ -215,14 +213,14 @@ function AboutPage() {
               <SkillAbout
                 porcentagem={80}
                 skill="TailwindCss"
-                forWhat={"Uma nova forma de usar usar styles"}
+                forWhat={"Uma nova forma de usar styles"}
               >
                 <SiTailwindcss className="text-6xl text-white drop-shadow-xl" />
               </SkillAbout>
               <SkillAbout
                 porcentagem={80}
                 skill="Django"
-                forWhat={"Framework para desenvolimento de BackEnd"}
+                forWhat={"Framework para desenvolvimento de BackEnd"}
               >
                 <SiDjango className="text-6xl text-white drop-shadow-xl" />
               </SkillAbout>
@@ -251,7 +249,7 @@ function AboutPage() {
                 porcentagem={70}
                 skill="GatsbyJs"
                 forWhat={
-                  "Desenvolviemtno web com renderização estática client-side"
+                  "Desenvolvimento web com renderização estática client-side"
                 }
               >
                 <SiGatsby className="text-6xl text-white drop-shadow-xl" />
@@ -278,7 +276,7 @@ function AboutPage() {
             <AboutPortfolioCard
               link="https://github.com/MaxFukui/personal-blog-portfolio-react-js"
               title="Blog Nextjs"
-              content="Blog em desenvolvimento com a finalidade de ser um blog pessoal. Algo que possa agregar trabalhos e posts. Integração ao CSM Strapi."
+              content="Blog pessoal em desenvolvimento. Espaço para compartilhar projetos e trabalhos. Integração ao CSM Strapi"
               tecs="NodeJs, NextJs, ReactJs e Tailwindcss"
               theme="Web Development"
               github="sim"
@@ -286,7 +284,7 @@ function AboutPage() {
             <AboutPortfolioCard
               link="https://colab.research.google.com/drive/1v1KSeFTn6PLQUfWdbaE9TmSF7Q1VlZ2Y?usp=sharing"
               title="Criação de imagens com redes neurais artificiais	"
-              content="Trabalho utilizado para pós graduação em Engenheiro Machine Learning. Sendo o trabalho focado em criar uma rede neural capaz de criar imagens de fachadas arquitetônicas"
+              content="Trabalho utilizado para pós-graduação em Engenheiro Machine Learning. Sendo o trabalho focado em criar uma rede neural capaz de criar imagens de fachadas arquitetônicas"
               tecs="Keras, Python e Pandas"
               theme="Inteligência Artificial"
             />
@@ -311,7 +309,7 @@ function AboutPage() {
             <AboutPortfolioCard
               link="https://github.com/maxcorbux/Cartografia"
               title="Backend para Platorma cultural do MS"
-              content="Desenvovlimento de um Backend para um trabalho voluntário envolvendo o mapeamento da cultural da cidade. Foi realizado um backend com autenticação, resolução de coordenadas geográficas, além disso, um sistema CRUD para armazenamento de dados e conexão com um bando relacional.
+              content="Desenvovlimento de um Backend para um trabalho voluntário envolvendo o mapeamento da cultural da cidade. Foi realizado um backend com autenticação, resolução de coordenadas geográficas; além disso, um sistema CRUD para armazenamento de dados e conexão com um bando relacional.
               saiba mais em: https://www.mapacultural.ms.gov.br
               "
               tecs="Express, Nodejs"
@@ -324,7 +322,7 @@ function AboutPage() {
 
       <AboutCard>
         <div className="flex flex-col text-white">
-          <h2>Contanto</h2>
+          <h2>Contato</h2>
           <div
             className="bg-zinc-800 rounded-lg flex flex-row p-2 m-1
           transition duration-150 ease-out
