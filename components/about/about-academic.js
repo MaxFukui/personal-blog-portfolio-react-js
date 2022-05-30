@@ -8,7 +8,7 @@ export default function AcademicCard(props) {
     <div className="mt-3">
       <p className="text-left font-serif text-sm"> {faculdade}</p>
       <span className="flex flex-row font-serif text-sm">
-        <p className="text-left">Data de Término :</p>
+        <p className="text-left">Ano de conclusão:</p>
         <p className="pl-2"> {dataTermino}</p>
       </span>
     </div>
@@ -17,9 +17,9 @@ export default function AcademicCard(props) {
   return (
     <Fragment>
       <li
-        className="grow  p-3 bg-slate-900 m-2 rounded-xl text-center
+        className="grow  p-3 bg-zinc-900 m-2 rounded-xl text-center
         transition ease-in-out delay-150 drop-shadow-md hover:scale-105 
-        hover:drop-shadow-2xl border-2 border-slate-900 hover:border-white" 
+        hover:drop-shadow-2xl border-2 border-zinc-900 hover:border-cyan-500" 
         onMouseOver={() => {
           setMouseOver(true);
         }}

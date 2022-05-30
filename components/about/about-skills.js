@@ -12,9 +12,9 @@ export default function SkillAbout(props){
     }
 
     return(
-        <div className="rounded-lg bg-cyan-500 p-3 m-1 w-40 flex flex-col  
+        <div className="rounded-lg bg-zinc-900 p-3 m-1 w-40 flex flex-col  
         transition duration-150 ease-out
-        hover:scale-125 hover:bg-zinc-900 hover:ease-in"
+        hover:scale-125 hover:bg-cyan-500 hover:ease-in"
             onMouseOver={()=>{setMouseOver(true)}}
             onMouseLeave={()=>{setMouseOver(false)}}
         >
