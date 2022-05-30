@@ -25,6 +25,7 @@ import {
   SiGithub,
   SiGmail,
 } from "react-icons/si";
+import {AiOutlineHeart} from "react-icons/ai"
 
 function AboutPage() {
   const [mouseOverGraduation, setMouseOverGraduation] = useState(false);
@@ -151,7 +152,7 @@ function AboutPage() {
           </div>
           <div className="grow pr-3">
             <div className="flex flex-row pl-2 text-white">
-              <IoLanguageSharp className="text-2xl font-bold mt-1" />
+              <AiOutlineHeart className="text-2xl font-bold mt-1" />
               <h2 className="ml-2 font-bold text-lg">
                 Áreas preferidas de atuação
               </h2>
@@ -159,7 +160,7 @@ function AboutPage() {
             <div className="flex flex-col text-white m-2 rounded-lg bg-zinc-900 w-full p-3">
               <h2>Desenvolvimento Web (Frontend/Backend)</h2>
               <h2>Desenvolvimento em Machine Learning</h2>
-              <h2>Cientista de dados</h2>
+              <h2>Ciência de dados</h2>
             </div>
           </div>
         </div>
