@@ -25,7 +25,7 @@ import {
   SiGithub,
   SiGmail,
 } from "react-icons/si";
-import {AiOutlineHeart} from "react-icons/ai"
+import { AiOutlineHeart } from "react-icons/ai";
 
 function AboutPage() {
   const [mouseOverGraduation, setMouseOverGraduation] = useState(false);
@@ -34,35 +34,38 @@ function AboutPage() {
   return (
     <div
       className="container mx-auto p-5 w-full
-    bg-zinc-400 "
+    bg-gradient-to-r 
+    from-cyan-200
+    via-cyan-900
+    to-indigo-500
+    "
     >
       <AboutCard className="CardCabecalho">
         <div className="grid">
           <img
-            src="https://picsum.photos/300/300/"
+            src="/about/MyImage.jpg"
             width={300}
             height={300}
-            className="rounded-full px-4 py-4 place-self-center "
+            className="rounded-full px-4 py-4
+             place-self-center 
+             drop-shadow-[0_35px_35px_rgba(0,0,0,0.50)]
+             "
           />
         </div>
         <div className=" flex-1 pl-4 align-middle py-11 pr-8">
           <h1 className="text-white text-right  text-xl font-bold">
             Max Fukui Tieti
           </h1>
-          <p className="text-white text-justify font-serif font-extralight">
+          <p className="text-white text-justify font-serif font-extralight
+          bg-zinc-900 p-4 rounded-lg
+          ">
             {" "}
-            tristique erat elit, sed auctor massa porta vel. Nunc consequat elit
-            eget sapien vestibulum pretium. Donec sed nisi non nibh porttitor
-            vehicula nec sit amet lectus. Phasellus venenatis fringilla dictum.
-            Donec volutpat sollicitudin dui, nec pharetra metus viverra
-            dignissim. Nam porttitor condimentum tortor, in porttitor nibh
-            vestibulum nec. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Vivamus placerat faucibus ante
-            vitae fringilla. Etiam imperdiet sem ut mauris tincidunt congue id
-            in leo. Duis tincidunt a ex sit amet cursus. Nullam sollicitudin dui
-            vitae enim rhoncus, eu facilisis nulla feugiat. Maecenas dapibus,
-            neque ultricies aliquet fermentum, elit mauris tempus dolor, eget
-            ultrices purus sapien sit amet lectus. Nulla facilisi.{" "}
+            Olá! Me descreveria como um desenvolvedor assíduo e curioso. Comecei
+            a programar em 2014 como um hobbie e, aos poucos, foi se tornando
+            meu ofício. Foquei minhas pesquisas para o estado da arte na
+            tecnologia, sempre tentando trazer o que há de mais interessante ao
+            meu workflow. Nesse momento busco melhorar minhas habilidades em
+            desenvolvimento web e em aplicações relacionadas a machine learning.{" "}
           </p>
         </div>
       </AboutCard>
@@ -170,7 +173,9 @@ function AboutPage() {
         <div className="flex flex-col pl-2">
           <div className="flex flex-row">
             <GiAncientSword className="text-xl text-white" />
-            <h2 className="font-bold text-left text-white pb-2">Gosto de trabalhar com </h2>
+            <h2 className="font-bold text-left text-white pb-2">
+              Gosto de trabalhar com{" "}
+            </h2>
           </div>
           <div className="Habilidades">
             <div className="flex flex-wrap content-center justify-center">
@@ -297,7 +302,6 @@ function AboutPage() {
               theme="Web Development"
               github="sim"
             />
-
             <AboutPortfolioCard
               link="https://github.com/MaxFukui/backend-foodtracking-djanog/tree/main"
               title="Backend para Food Tracking"
@@ -309,7 +313,7 @@ function AboutPage() {
 
             <AboutPortfolioCard
               link="https://github.com/maxcorbux/Cartografia"
-              title="Backend para Platorma cultural do MS"
+              title="Backend para Plaforma cultural do MS"
               content="Desenvovlimento de um Backend para um trabalho voluntário envolvendo o mapeamento da cultural da cidade. Foi realizado um backend com autenticação, resolução de coordenadas geográficas; além disso, um sistema CRUD para armazenamento de dados e conexão com um bando relacional.
               saiba mais em: https://www.mapacultural.ms.gov.br
               "
