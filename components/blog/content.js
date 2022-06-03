@@ -7,12 +7,12 @@ export async function markdownToHtml(markdown){
     return result.toString()
 }
 
-function resolveImage(markdownPuro){
-    const padrao = '<img src="'
-    const preString = padrao+process.env.NEXT_PUBLIC_STRAPI_API_URL
-    let fixedUrlString = markdownPuro.replace(padrao, preString)
-    return fixedUrlString
-}
+// function resolveImage(markdownPuro){
+//     const padrao = '<img src="'
+//     const preString = padrao+process.env.NEXT_PUBLIC_STRAPI_API_URL
+//     let fixedUrlString = markdownPuro.replace(padrao, preString)
+//     return fixedUrlString
+// }
 
 export default function PostContent(props){
     const [content, setContent] = useState("Ainda não")
@@ -20,8 +20,7 @@ export default function PostContent(props){
     useEffect(()=>{
         markdownToHtml(props.content)
         .then(res => {
-            resolveImage(res)
-            setContent(resolveImage(res))
+            setContent(res)
         })
         .catch(err => {
             return err

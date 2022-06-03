@@ -11,9 +11,9 @@ import {useRouter} from "next/router"
 //     return `http://192.168.100.183:1337${newUrl}`
 // }
 
-const myLoader = ( { src }) =>{
-    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${src}`
-}
+// const myLoader = ( { src }) =>{
+//     return `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${src}`
+// }
 
 function Card(props){
     const {title, headline, imageUrl, id} = props
@@ -28,8 +28,7 @@ function Card(props){
         <div onClick={handleClick}>
             <h2>{ title }</h2>
             <p>{headline}</p>
-            <Image  loader={myLoader} src={imageUrl}  layout="fixed"  
-            width={200} height={300}/>
+            <Image  src={imageUrl}  layout="fixed" width={200} height={300}/>
         </div>
      )
 }

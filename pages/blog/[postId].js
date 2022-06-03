@@ -85,7 +85,7 @@ function PostPage(props) {
       <div>
         <Menu />
         <div>
-          <PostCoverHeadline cover={handleImage( post.attributes.cover.data[0].attributes.url )} headline={post.attributes.headline} 
+          <PostCoverHeadline cover={ post.attributes.cover.data[0].attributes.url} headline={post.attributes.headline} 
            title={post.attributes.title}/>
           <PostContent
             content={post.attributes.content} />

@@ -7,7 +7,8 @@ import { postList } from "@/lib/api";
  export default function BlogList() {
   const [isLoad, setIsLoad] = useState(false);
   const [posts, setPosts] = useState([]);
-  const {data, loading, error} = useQuery(postList, {variables:{pageSize:3, page:1}})
+  const {data, loading, error} = useQuery(postList, {variables:{pageSize:5, page:1}})
+
   useEffect(()=>{
     if(error){
       console.log(error)
@@ -26,6 +27,7 @@ import { postList } from "@/lib/api";
           {posts.map((post)=>{
               return <Card imageUrl={post.attributes.cover.data[0].attributes.url} 
               id={post.id}
+              key={post.id}
               title={post.attributes.title}
               headline={post.attributes.headline}
               />
