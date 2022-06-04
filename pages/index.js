@@ -1,65 +1,54 @@
 import Menu from "../components/menu";
 import Footer from "../components/footer";
 import { useState, useEffect } from "react";
-import { getPostsHome, getProjectsHome } from "../lib/api";
+import { postList } from "../lib/api";
+import { useQuery } from "@apollo/client";
+import IndexPageCard from "@/components/indexPage/indexPageCard";
+import IndexLastPost from "@/components/indexPage/indexLastPost";
+import Hero from "@/components/indexPage/Hero";
 
 function HomePage() {
-  const [isLoad, setIsLoad] = useState(false);
-  const [posts, setPosts] = useState([]);
-  const [projects, setProjects] = useState([]);
+  const [isLoad, setIsLoad]=useState(false);
+  const [posts, setPosts]=useState([]);
+  const [projects, setProjects]=useState([]);
+
+  const { data, loading, error } = useQuery(postList, {
+    variables: { pageSize: 6, page: 1 },
+  });
 
   useEffect(() => {
-    const id = setInterval(() => {
-      getPostsHome(4, 1)
-        .then((res) => {
-          setPosts(res.blogs.data);
-          if (projects) {
-            setIsLoad(true);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          setIsLoad(false);
-        });
-    }, 2000);
-    return () => clearInterval(id);
-  }, [isLoad]);
+    if (error) {
+      console.log(error);
+    }
+    if (!loading) {
+      const id = setInterval(() => {
+        setPosts(data.blogs.data);
+        setIsLoad(true);
+        console.log(posts)
+      }, 2000);
+      return () => clearInterval(id);
+    }
+  });
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      getProjectsHome(2, 1)
-        .then((res) => {
-          setProjects(res.projects.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }, 2000);
-    return () => clearInterval(id);
-  }, [isLoad]);
-
-  return (
-    <div>
-      <Menu />
-      <h2>Blog</h2>
-      <div>
-        {posts.map((post) => {
-          if (isLoad) {
-            return <h2 key={post.id}>{post.attributes.title}</h2>;
+  return <div>
+    <Menu/>
+      <Hero />
+      <IndexPageCard>
+        <h2 className="uppercase font-bold text-2xl py-2 pl-1">Read more</h2>
+        <div className="flex flex-row flex-wrap justify-center">
+          {
+            posts.map((post)=>{
+              return <IndexLastPost 
+              title={post.attributes.title}
+              headline={post.attributes.headline}
+              coverUrl={post.attributes.cover.data[0].attributes.url}
+              />
+            })
           }
-        })}
-      </div>
-      <h2>Projetos</h2>
-      <div>
-        {projects.map((project) => {
-          if (isLoad) {
-            return <h2 key={project.id}>{project.attributes.title}</h2>;
-          }
-        })}
-      </div>
-      <Footer></Footer>
-    </div>
-  );
+        </div>
+      </IndexPageCard>
+    <Footer/>
+  </div>;
 }
 
 export default HomePage;
