@@ -1,4 +1,4 @@
-export default function IndexLastPost(props){
+export default function IndexReadMore(props){
 
     const reactDivStyle = {
       backgroundImage: "url(" + props.coverUrl + ")",
@@ -13,7 +13,7 @@ export default function IndexLastPost(props){
             items-end
             ">
                 
-                <h2 className="font-bold text-lg uppercase">{props.title}</h2>
+                <h2 className="font-bold text-lg">{props.title}</h2>
                 <p className="text-justify">{props.headline}</p>
                 <div className="relative w-full grow self-end">
                     <p className="text-right bottom-0 right-0 self-end">go to...</p>

@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { postList } from "../lib/api";
 import { useQuery } from "@apollo/client";
 import IndexPageCard from "@/components/indexPage/indexPageCard";
-import IndexLastPost from "@/components/indexPage/indexLastPost";
+import IndexReadMore from "@/components/indexPage/indexReadMore";
 import Hero from "@/components/indexPage/Hero";
+import IndexLastPosts from "@/components/indexPage/indexLastPosts";
 
 function HomePage() {
   const [isLoad, setIsLoad]=useState(false);
@@ -33,12 +34,13 @@ function HomePage() {
   return <div>
     <Menu/>
       <Hero />
+      <IndexLastPosts/>
       <IndexPageCard>
         <h2 className="uppercase font-bold text-2xl py-2 pl-1">Read more</h2>
         <div className="flex flex-row flex-wrap justify-center">
           {
             posts.map((post)=>{
-              return <IndexLastPost 
+              return <IndexReadMore 
               title={post.attributes.title}
               headline={post.attributes.headline}
               coverUrl={post.attributes.cover.data[0].attributes.url}
