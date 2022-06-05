@@ -6,6 +6,7 @@ function Footer() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum
           nulla massa, eget blandit nibh euismod in. Vivamus dolor mauris,
           vehicula ut neque eget, posuere convallis metus. Nam vitae nibh at
+          nulla massa, eget blandit nibh euismod in. Vivamus dolor mauris,
           enim tincidunt fermentum. Donec arcu justo, ultrices a diam non,
           consectetur vulputate sem. Cras ullamcorper tincidunt rhoncus.{" "}
         </p>
