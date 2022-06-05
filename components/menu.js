@@ -18,9 +18,9 @@ function Menu(props){
       <span className={linkStyle}>
         <Link href="/blog" >Blog</Link>
       </span>
-      <span className={linkStyle}>
+      {/* <span className={linkStyle}>
         <Link href="/projects" >Projects</Link>
-      </span>
+      </span> */}
       <span className={linkStyle}>
         <Link href="/about" >About</Link>
       </span>

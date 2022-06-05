@@ -41,6 +41,8 @@ function HomePage() {
           {
             posts.map((post)=>{
               return <IndexReadMore 
+              id={post.id}
+              key={post.id}
               title={post.attributes.title}
               headline={post.attributes.headline}
               coverUrl={post.attributes.cover.data[0].attributes.url}
