@@ -8,7 +8,7 @@ function Blog(){
     <div>
       <Menu />
       <BlogSearch />
-      <BlogList />
+      <BlogList page={1}/>
       <Footer />
     </div>
   )
