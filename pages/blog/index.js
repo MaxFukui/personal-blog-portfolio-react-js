@@ -7,7 +7,6 @@ function Blog(){
   return (
     <div>
       <Menu />
-      <BlogSearch />
       <BlogList page={1}/>
       <Footer />
     </div>

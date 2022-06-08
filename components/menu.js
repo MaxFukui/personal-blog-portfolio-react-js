@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useAmp } from 'node_modules/next/amp'
 import { useState } from 'react'
+
 function Menu(props){
   const linkStyle = "mx-2 px-2 font-bold w-full hover:text-cyan-600 hover:font-2xl";
   const [mouseOver, setMouseOver] = useState(false);
@@ -16,7 +17,7 @@ function Menu(props){
         <Link href="/" >Home</Link>
       </span>
       <span className={linkStyle}>
-        <Link href="/blog" >Blog</Link>
+        <Link href="/blog/pagination/1" >Blog</Link>
       </span>
       {/* <span className={linkStyle}>
         <Link href="/projects" >Projects</Link>

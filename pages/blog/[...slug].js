@@ -1,6 +1,8 @@
 import { useRouter } from "next/router";
 import BlogList from "@/components/blog/blog-list";
 import { QueryDocumentKeys } from "node_modules/graphql/language/ast";
+import Menu from "@/components/menu";
+import Footer from "@/components/footer";
 
 function BlogPostPage() {
   const router = useRouter();
@@ -14,8 +16,9 @@ function BlogPostPage() {
     if (!page) return <>Carregando</>
     return (
       <div>
-        <h1>The blog posts</h1>
-        <BlogList page={page}/>
+        <Menu />
+        <BlogList page={page} />
+        <Footer />
       </div>
     );
   } 
