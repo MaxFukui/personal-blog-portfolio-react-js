@@ -31,6 +31,7 @@ export default function PostContent(props){
         return ( <div dangerouslySetInnerHTML={{ __html:content }} className="
         prose-img:rounded-xl  prose-img:mx-auto prose-img:my-2
         prose-headings:underline prose-headings:font-bold prose-headings:text-2xl
+        prose-headings:pb-2
         prose-p:text-justify
         "/>)
     } else {
