@@ -14,16 +14,16 @@ function Menu(props){
       onMouseOver={()=>{setMouseOver(true)}}
       onMouseLeave={()=>{setMouseOver(false)}}
       >
-        <Link href="/" >Home</Link>
+        <a href="/">Home</a>
       </span>
       <span className={linkStyle}>
-        <Link href="/blog/pagination/1" >Blog</Link>
+        <a href="/blog/pagination/1" >Blog</a>
       </span>
       {/* <span className={linkStyle}>
         <Link href="/projects" >Projects</Link>
       </span> */}
-      <span className={linkStyle}>
-        <Link href="/about" >About</Link>
+      <span className={linkStyle} >
+        <a href="/about">About</a>
       </span>
     </div>
   )

@@ -27,7 +27,7 @@ export default function BlogList(props) {
     }
   });
 
-  let pagination = (<></>)
+  let pagination = (<span></span>)
   if(isLoad){
      pagination = <Pagination pageCount={meta.pagination.pageCount}
       page={meta.pagination.page}
