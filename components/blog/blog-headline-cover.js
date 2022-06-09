@@ -1,11 +1,11 @@
 function PostCoverHeadline(props) {
   return (
     <div>
-      <h1 className="font-bold">{props.title}</h1>
+      <h1 className="font-bold text-2xl">{props.title}</h1>
       <br />
-      <h2>{props.headline}</h2>
+      <h2 className="italic text-justify">{props.headline}</h2>
       <br />
-      <img src={props.cover}/>
+      <img className="mx-auto mb-4" src={props.cover}/>
     </div>
   );
 }

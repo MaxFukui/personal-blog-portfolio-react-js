@@ -31,7 +31,7 @@ function HomePage() {
     }
   });
 
-  return <div>
+  return <div className=" flex-col">
     <Menu/>
       <Hero />
       <IndexLastPosts/>

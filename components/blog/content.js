@@ -28,7 +28,11 @@ export default function PostContent(props){
     },[content])
 
     if ( content ){
-        return ( <div dangerouslySetInnerHTML={{ __html:content }} />)
+        return ( <div dangerouslySetInnerHTML={{ __html:content }} className="
+        prose-img:rounded-xl  prose-img:mx-auto prose-img:my-2
+        prose-headings:underline prose-headings:font-bold prose-headings:text-2xl
+        prose-p:text-justify
+        "/>)
     } else {
         <p>Carregando</p>
     }

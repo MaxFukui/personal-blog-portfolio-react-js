@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="bg-white w-full drop-shadow-xl mt-auto">
+    <div className="bg-white w-full drop-shadow-xl mt-auto  relative inset-x-0 bottom-0">
       <div className="mx-auto w-3/4">
         <p className="text-center text-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum
