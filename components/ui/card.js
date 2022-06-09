@@ -13,6 +13,7 @@ function Card(props){
     const fullPath = "/blog/" + props.id;
     router.push(fullPath);
   }
+
   return (
     <div className="bg-white drop-shadow-xl m-2 p-2 grow-0 cursor-pointer
     transition duration-150 ease-in-out hover:ease-in 

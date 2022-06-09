@@ -84,7 +84,7 @@ function PostPage(props) {
     return (
       <div>
         <Menu />
-        <div>
+        <div className="w-2/3 mx-auto py-4">
           <PostCoverHeadline cover={ post.attributes.cover.data[0].attributes.url} headline={post.attributes.headline} 
            title={post.attributes.title}/>
           <PostContent

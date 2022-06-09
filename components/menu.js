@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { useAmp } from 'node_modules/next/amp'
 import { useState } from 'react'
 
 function Menu(props){
@@ -14,16 +13,16 @@ function Menu(props){
       onMouseOver={()=>{setMouseOver(true)}}
       onMouseLeave={()=>{setMouseOver(false)}}
       >
-        <a href="/">Home</a>
+        <Link href="/">Home</Link>
       </span>
       <span className={linkStyle}>
-        <a href="/blog/pagination/1" >Blog</a>
+        <Link href="/blog/pagination/1" >Blog</Link>
       </span>
       {/* <span className={linkStyle}>
         <Link href="/projects" >Projects</Link>
       </span> */}
       <span className={linkStyle} >
-        <a href="/about">About</a>
+        <Link href="/about">About</Link>
       </span>
     </div>
   )

@@ -2,17 +2,23 @@ import { useQuery } from "@apollo/client";
 import { useState, useEffect, Fragment } from "react";
 import Card from "../ui/card";
 import { postList } from "@/lib/api";
-import Pagination from "./pagination";
+import { Pagination } from "node_modules/@mui/material/index";
+import { useRouter } from "node_modules/next/router";
 
 export default function BlogList(props) {
   const [isLoad, setIsLoad] = useState(false);
   const [posts, setPosts] = useState([]);
   const [meta, setMeta] = useState([]);
+  const [page, setPage] = useState("");
+  const router = useRouter();
   const { data, loading, error } = useQuery(postList, {
     variables: { pageSize: 5, page: props.page },
   });
 
-
+  function handlePaginationChange(e, value) {
+    setPage(value);
+    router.push(`pagination/${value}`, undefined, { shallow: true });
+  }
   useEffect(() => {
     if (error) {
       console.log(error);
@@ -29,8 +35,9 @@ export default function BlogList(props) {
 
   let pagination = (<span></span>)
   if(isLoad){
-     pagination = <Pagination pageCount={meta.pagination.pageCount}
+     pagination = <Pagination count={meta.pagination.pageCount}
       page={meta.pagination.page}
+      onChange={handlePaginationChange}
      />
   }   
 
@@ -49,7 +56,7 @@ export default function BlogList(props) {
           );
         })}
       </div>
-      <div>
+      <div className="mx-auto w-64 my-2 mt-4">
         {pagination}
       </div>
     </Fragment>
