@@ -17,7 +17,7 @@ export default function AuthorPost(props) {
       />
       <div className="flex-col w-3/4">
         <h2 className="font-bold text-lg">{props.name}</h2>
-        <p>{props.about}</p>
+        <p className="text-justify">{props.about}</p>
       </div>
     </div>
   );

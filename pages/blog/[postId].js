@@ -6,46 +6,60 @@ import PostContent from "../../components/blog/content";
 import { useRouter } from "node_modules/next/router";
 import PostCoverHeadline from "@/components/blog/blog-headline-cover";
 import AuthorPost from "@/components/blog/author-blog";
+import BlogPagination from "@/components/blog/blog-pagination"; 
 
 const postQuery = gql`
-  query post($id: ID!) {
-    blog(id: $id) {
-      data {
-        id
-        attributes {
-          title
-          content
-          cover {
-            data {
-              attributes {
-                url
-              }
+query post($id: ID!) {
+  blog(id: $id) {
+    data {
+      id
+      attributes {
+        title
+        content
+        cover {
+          data {
+            attributes {
+              url
             }
           }
-          date
-          updatedAt
-          createdAt
-          headline
-          users_permissions_users {
-            data {
-              attributes {
-                name
-                portrait {
-                  data {
-                    attributes {
-                      url
-                    }
+        }
+        date
+        updatedAt
+        createdAt
+        headline
+        users_permissions_users {
+          data {
+            attributes {
+              name
+              portrait {
+                data {
+                  attributes {
+                    url
                   }
                 }
-                about
               }
-              id
+              about
             }
+            id
           }
         }
       }
     }
   }
+  blogs(sort: ["publishedAt:desc"], pagination: { limit: 1000 }) {
+    meta {
+      pagination {
+        page
+        pageCount
+        total
+      }
+    }
+    data {
+      id
+    }
+  }
+}
+
 `;
 
 function PostPage(props) {
@@ -54,25 +68,23 @@ function PostPage(props) {
   console.log(router.query.postId)
   const [post, setPost] = useState([]);
   const [user, setUser] = useState([]);
+  const [ids, setIds] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
   const id = `${ router.query.postId }`;
   const { data, error, loading } = useQuery(postQuery, {
     variables: { id: id },
   });
 
-  function handleImage (oldUrl){
-    const newImageUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL+oldUrl
-    return newImageUrl
-  }
-
   useEffect(() => {
     console.log(loading);
     if (!loading) {
       setPost(data.blog.data);
+      setIds(data.blogs);
       setUser(data.blog.data.attributes.users_permissions_users);
       setIsLoad(true)
     }
   }, [loading]);
+
 
   if (!isLoad) {
     return (
@@ -93,6 +105,7 @@ function PostPage(props) {
             name={user.data[0].attributes.name} 
             about={user.data[0].attributes.about} 
           />
+          <BlogPagination page={post.id} allIds={ids}/>
         </div>
         <Footer />
       </div>

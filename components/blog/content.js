@@ -7,13 +7,6 @@ export async function markdownToHtml(markdown){
     return result.toString()
 }
 
-// function resolveImage(markdownPuro){
-//     const padrao = '<img src="'
-//     const preString = padrao+process.env.NEXT_PUBLIC_STRAPI_API_URL
-//     let fixedUrlString = markdownPuro.replace(padrao, preString)
-//     return fixedUrlString
-// }
-
 export default function PostContent(props){
     const [content, setContent] = useState("Ainda não")
 
