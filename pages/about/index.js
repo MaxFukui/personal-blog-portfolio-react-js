@@ -35,9 +35,8 @@ function AboutPage() {
     <div
       className="container mx-auto p-5 w-full
     bg-gradient-to-r 
-    from-cyan-200
-    via-cyan-900
-    to-indigo-500
+    from-indigo-800
+    to-violet-500
     "
     >
       <AboutCard className="CardCabecalho">
@@ -57,7 +56,7 @@ function AboutPage() {
             Max Fukui Tieti
           </h1>
           <p className="text-white text-justify font-serif font-extralight
-          bg-zinc-900 p-4 rounded-lg
+          bg-zinc-900 p-4 rounded-lg min-h-fit
           ">
             {" "}
             Olá! Me descreveria como um desenvolvedor assíduo e curioso. Comecei
@@ -148,7 +147,7 @@ function AboutPage() {
                 Português: <strong>Nativo</strong>
               </h2>
               <h2>
-                Inglês: <strong>Fluente</strong> (Fala bem; Escreve bem; Lê bem)
+                Inglês: <strong>Fluente/Proficiente</strong> (Fala bem; Escreve bem; Lê bem)
               </h2>
               <h2>Alemão: Básico</h2>
             </div>

@@ -15,16 +15,6 @@ export default function AboutPortfolioCard(props) {
   if (mouseOver) {
     hiddedInformation = (
       <Fragment>
-        <a href={props.link} className="self-center justify-center">
-            <button
-            className="bg-black mx-auto rounded-lg p-4 flex flex-row
-            hover:bg-cyan-500
-            "
-            type="button"
-            >
-                {icone} <p className="pl-2">Acesse</p>
-        </button>
-        </a>
       </Fragment>
     );
   } else {
@@ -54,7 +44,16 @@ export default function AboutPortfolioCard(props) {
         <p className="align-top text-sm">Tipo:</p>
         <p className="ml-2 text-sm italic align-baseline mb-2">{props.theme}</p>
       </span>
-      {hiddedInformation}
+      <a href={props.link} className="self-center justify-center">
+          <button
+          className="bg-black mx-auto rounded-lg p-4 flex flex-row
+          hover:bg-cyan-500
+          "
+          type="button"
+          >
+              {icone} <p className="pl-2">Acesse</p>
+      </button>
+      </a>
     </div>
   );
 }
