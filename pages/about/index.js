@@ -35,8 +35,8 @@ function AboutPage() {
     <div
       className="container mx-auto p-5 w-full
     bg-gradient-to-r 
-    from-indigo-800
-    to-violet-500
+    from-sky-800
+    to-teal-500
     "
     >
       <AboutCard className="CardCabecalho">
