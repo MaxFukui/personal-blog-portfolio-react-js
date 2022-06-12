@@ -64,13 +64,14 @@ query post($id: ID!) {
 
 function PostPage(props) {
   const router = useRouter();
-  console.log("pathname: "+router.pathname)
-  console.log(router.query.postId)
+  const id = (Number.isInteger(router.query.postId))? `${ router.query.postId }`: null; 
+  if (id==null) return <>{router.push("/")}</>
+
   const [post, setPost] = useState([]);
   const [user, setUser] = useState([]);
   const [ids, setIds] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
-  const id = `${ router.query.postId }`;
+
   const { data, error, loading } = useQuery(postQuery, {
     variables: { id: id },
   });
