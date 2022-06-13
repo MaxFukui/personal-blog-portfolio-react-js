@@ -64,8 +64,7 @@ query post($id: ID!) {
 
 function PostPage(props) {
   const router = useRouter();
-  const id = (Number.isInteger(router.query.postId))? `${ router.query.postId }`: null; 
-  if (id==null) return <>{router.push("/")}</>
+  const id = (!isNaN( router.query.postId ))? `${ router.query.postId }`: null; 
 
   const [post, setPost] = useState([]);
   const [user, setUser] = useState([]);
@@ -78,6 +77,7 @@ function PostPage(props) {
 
   useEffect(() => {
     console.log(loading);
+    if (id==null) router.push("/")
     if (!loading) {
       setPost(data.blog.data);
       setIds(data.blogs);

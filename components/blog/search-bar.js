@@ -1,5 +1,4 @@
 import { useRouter } from "node_modules/next/router";
-import Link from "node_modules/next/link";
 import { useState } from "react";
 import {BiSearch} from "react-icons/bi"
 
@@ -9,7 +8,7 @@ export default function SearchBar() {
   const [inputValue, setInputValue] = useState("");
   function handleButton(e) {
     e.preventDefault
-    router.push("search/"+inputValue)
+    router.push("search/"+inputValue + "/" + 1)
   }
 
   function getInputValue (e){

@@ -5,6 +5,7 @@ import Menu from "@/components/menu";
 import Footer from "@/components/footer";
 import SearchBar from "@/components/blog/search-bar";
 import BlogSearchResult from "@/components/blog/blog-search-result";
+import { Divider } from "node_modules/@mui/material/index";
 
 function BlogPostPage() {
   const router = useRouter();
@@ -12,9 +13,14 @@ function BlogPostPage() {
   console.log("router query " + router.query.slug);
   let hasQuery = router.query.slug != null ? router.query.slug : <>Não encontrado 2</>;
 
-  if(hasQuery[0] == "search" && hasQuery.length == 2){
+  if(hasQuery[0] == "search" && hasQuery.length >= 2){
     return (
-      <BlogSearchResult searchFor={hasQuery[1]}/>
+      <div>
+        <Menu />
+        <SearchBar />
+        <BlogSearchResult searchFor={hasQuery[1]} page={hasQuery[2]}/>
+        <Footer />
+      </div>
     )
   }
 
