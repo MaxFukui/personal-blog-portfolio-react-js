@@ -95,6 +95,12 @@ function AboutPage() {
               dataTermino="2017.2"
               stateMouse={mouseOverGraduation}
             />
+            <AcademicCard
+              graduation={"Engenharia da Computação"}
+              faculdade="Estácio de Sá"
+              dataTermino="2024 (Previsto)"
+              stateMouse={mouseOverGraduation}
+            />
           </ul>
           <h2 className="p-2 text-lg font-bold">Pós-Graduação</h2>
           <ul
